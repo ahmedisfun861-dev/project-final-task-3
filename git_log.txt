@@ -1,0 +1,53 @@
+commit 3d7c205dc7c64bc9c62a2fef9ba4c694b3824a32
+Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
+Date:   Sun Aug 16 19:59:23 2026 +0300
+
+    Create task2_cleaned_data.csv
+
+ task2_cleaned_data.csv | 410 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 410 insertions(+)
+
+commit d13bc421aa70bb2ccf86b46753001fb4f80ade4e
+Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
+Date:   Sun Aug 16 19:59:17 2026 +0300
+
+    Create task1_sql_answers.txt
+
+ task1_sql_answers.txt | 110 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 110 insertions(+)
+
+commit 0dc8d6b9c6b24b316b115815ccf9ec54f36258c2
+Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
+Date:   Sun Aug 16 19:59:09 2026 +0300
+
+    Create task1_combined_data.csv
+
+ task1_combined_data.csv | 418 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 418 insertions(+)
+
+commit 0b9c550a2d111f0bb071bd9c42ea47d5df8829de
+Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
+Date:   Sun Aug 16 19:59:01 2026 +0300
+
+    Create student_id_Eyouth31106200101791_library.ipynb
+
+ student_id_Eyouth31106200101791_library.ipynb | 427 ++++++++++++++++++++++++++
+ 1 file changed, 427 insertions(+)
+
+commit 4917bcd1a976f3b491ff7db7ad7fb1f06484d9af
+Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
+Date:   Sun Aug 16 19:58:51 2026 +0300
+
+    Create integrity_report.docx
+
+ integrity_report.docx | Bin 0 -> 27743 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 3109f89cd7ff8179f45832dcbbc7e00ddf33f072
+Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
+Date:   Sun Aug 16 19:58:42 2026 +0300
+
+    Create fairness_reflection_2.docx
+
+ fairness_reflection_2.docx | Bin 0 -> 16353 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
