@@ -1,6 +1,24 @@
+commit 1e9af5e9688e072b259a1e3da5f6d2f625a13e21
+Author: Ahmed Mohammed Khairy Eltahlawy <ahmed.khairy@mhis.edu.eg>
+Date:   2026-08-16
+
+    Rename fairness reflection to match required filename
+
+ fairness_reflection_2.docx => fairness_reflection.docx | Bin
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6974f2c5db2e89e99e028bce17a79b77948f7114
+Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
+Date:   2026-08-16
+
+    Add git_log.txt recording commit history
+
+ git_log.txt | 53 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
 commit 3d7c205dc7c64bc9c62a2fef9ba4c694b3824a32
 Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
-Date:   Sun Aug 16 19:59:23 2026 +0300
+Date:   2026-08-16
 
     Create task2_cleaned_data.csv
 
@@ -9,7 +27,7 @@ Date:   Sun Aug 16 19:59:23 2026 +0300
 
 commit d13bc421aa70bb2ccf86b46753001fb4f80ade4e
 Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
-Date:   Sun Aug 16 19:59:17 2026 +0300
+Date:   2026-08-16
 
     Create task1_sql_answers.txt
 
@@ -18,7 +36,7 @@ Date:   Sun Aug 16 19:59:17 2026 +0300
 
 commit 0dc8d6b9c6b24b316b115815ccf9ec54f36258c2
 Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
-Date:   Sun Aug 16 19:59:09 2026 +0300
+Date:   2026-08-16
 
     Create task1_combined_data.csv
 
@@ -27,7 +45,7 @@ Date:   Sun Aug 16 19:59:09 2026 +0300
 
 commit 0b9c550a2d111f0bb071bd9c42ea47d5df8829de
 Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
-Date:   Sun Aug 16 19:59:01 2026 +0300
+Date:   2026-08-16
 
     Create student_id_Eyouth31106200101791_library.ipynb
 
@@ -36,7 +54,7 @@ Date:   Sun Aug 16 19:59:01 2026 +0300
 
 commit 4917bcd1a976f3b491ff7db7ad7fb1f06484d9af
 Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
-Date:   Sun Aug 16 19:58:51 2026 +0300
+Date:   2026-08-16
 
     Create integrity_report.docx
 
@@ -45,7 +63,7 @@ Date:   Sun Aug 16 19:58:51 2026 +0300
 
 commit 3109f89cd7ff8179f45832dcbbc7e00ddf33f072
 Author: ahmedisfun861-dev <ahmedisfun861@gmail.com>
-Date:   Sun Aug 16 19:58:42 2026 +0300
+Date:   2026-08-16
 
     Create fairness_reflection_2.docx
 
