@@ -1,0 +1,110 @@
+================================================================================
+TASK 1: SQL ANSWERS & REFLECTION RECORD
+================================================================================
+
+-- 1. How much is each member borrowing? (Includes zero-checkout members)
+SELECT m.member_id, m.name, COUNT(c.checkout_id) AS total_checkouts
+FROM members m
+LEFT JOIN checkouts c ON m.member_id = c.member_id
+GROUP BY m.member_id, m.name
+ORDER BY total_checkouts DESC;
+
+Sample results:
+member_id | name           | total_checkouts
+1034      | Aya Wahba      | 25
+1044      | Sherif Saleh   | 21
+1008      | Ziad Saleh     | 19
+...
+[some member_id]  | [name]  | 0      <- zero-checkout members included via LEFT JOIN
+
+-- 2. Which books match a chosen author pattern? ('Shokry')
+SELECT book_id, title, author, genre
+FROM books
+WHERE author LIKE '%Shokry%'
+ORDER BY title;
+
+Sample results:
+book_id | title                   | author
+523     | Footsteps in the Dust   | Laila Shokry
+5xx     | The Weaver's Daughter   | Laila Shokry
+
+Note: An earlier draft of this answer used the pattern 'Austen', which returns
+zero rows against this catalog (no author by that name exists in the data).
+'Shokry' was substituted so the query returns a verifiable, non-empty result.
+
+-- 3. What are the most popular books? (Top 5)
+SELECT b.book_id, b.title, COUNT(c.checkout_id) AS times_borrowed
+FROM books b
+JOIN checkouts c ON b.book_id = c.book_id
+GROUP BY b.book_id, b.title
+ORDER BY times_borrowed DESC
+LIMIT 5;
+
+Sample results:
+book_id | title                   | times_borrowed
+501     | The Silver Kite         | 57
+507     | Fossils and Fireflies   | 55
+513     | Circuits for Beginners  | 46
+519     | Kites Over Cairo        | 38
+525     | Storms and Sailboats    | 25
+
+-- 4. Who are the most active readers? (Top 10)
+SELECT m.member_id, m.name, COUNT(c.checkout_id) AS total_checkouts
+FROM members m
+JOIN checkouts c ON m.member_id = c.member_id
+GROUP BY m.member_id, m.name
+ORDER BY total_checkouts DESC
+LIMIT 10;
+
+Sample results:
+member_id | name             | total_checkouts
+1034      | Aya Wahba        | 25
+1044      | Sherif Saleh     | 21
+1008      | Ziad Saleh       | 19
+1027      | Mostafa Fouad    | 18
+1010      | Nour Nabil       | 18
+1024      | Youssef Hegazy   | 17
+1065      | Adam Fahmy       | 17
+1018      | Ahmed Shafik     | 17
+1030      | Reem Osman       | 16
+1047      | Sara Rashad      | 16
+
+-- 5. Neighborhood activity history ('Maadi', looking PAST the 10 most recent)
+SELECT c.checkout_id, c.checkout_date, m.name, m.neighborhood
+FROM checkouts c
+JOIN members m ON c.member_id = m.member_id
+WHERE m.neighborhood = 'Maadi'
+ORDER BY c.checkout_date DESC
+LIMIT 10 OFFSET 10;
+
+Sample results (rows 11-20 newest-to-oldest, i.e. skipping the 10 most recent):
+checkout_id | checkout_date | name           | neighborhood
+9103        | 2025-09-04    | Bassel Hegazy  | Maadi
+9081        | 2025-08-25    | Adam Badr      | Maadi
+9001        | 2025-08-23    | Ziad Saleh     | Maadi
+9050        | 2025-08-21    | Bassel Hegazy  | Maadi
+9085        | 2025-08-19    | Ahmed Shafik   | Maadi
+9055        | 2025-08-08    | Hamza Sabry    | Maadi
+9023        | 2025-08-04    | Ahmed Shafik   | Maadi
+9004        | 2025-07-27    | Ziad Fouad     | Maadi
+9010        | 2025-07-22    | Hassan Saleh   | Maadi
+9051        | 2025-07-22    | Bassel Hegazy  | Maadi
+
+Note: An earlier draft of this answer used 'Downtown' as the neighborhood and
+LIMIT 10 with no OFFSET. Neither is correct: 'Downtown' does not exist in the
+data (real neighborhoods are Maadi, Zamalek, Heliopolis, Nasr City, Shubra),
+and LIMIT 10 alone returns the 10 most recent checkouts rather than looking
+past them. 'Maadi' with LIMIT 10 OFFSET 10 fixes both issues.
+
+================================================================================
+REFLECTION: WEB PAGES VS. DATABASES / APIS
+================================================================================
+1. Structure & Types:
+Databases and APIs return structured, strongly-typed data (integers, ISO dates)
+strictly governed by schemas. Web pages return unformatted HTML built for human
+visual layout, requiring DOM parsing.
+
+2. Integration Friction:
+Scraping web page HTML requires extra cleaning (stripping tags, casting strings
+to IDs/dates, filling missing fields) so the scraped data matches existing
+database schema standards before merging.
